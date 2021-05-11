@@ -11,9 +11,21 @@
     <h1>Productivity Logger</h1>
 
     <input type="text" id="task" name="task">
-    <button id="submit-button">Add Task</button>
+    <button id="submit-button" class="button">Add Task</button>
 
     <div id="tasks-container"></div>
+
+    <div id="timer">
+        <div id="timer-time">
+            00:00:00
+        </div>
+
+        <div id="buttons-container">
+            <button id="timer-start" class="button">Start</button>
+            <button id="timer-stop" class="button">Stop</button>
+            <button id="timer-reset" class="button">Reset</button>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./script.js" type="text/javascript"> </script>
