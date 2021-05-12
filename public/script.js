@@ -15,6 +15,13 @@ function renderTasks(taskArray) {
     
         const taskName = $("<h2>").text(element);
         newContainer.append(taskName);
+
+        const time = $("<h2>").text("00:00:00");
+        newContainer.append(time);
+
+        const saveButton = $("<button>").attr("class", "save-button button");
+        saveButton.text("Save");
+        newContainer.append(saveButton);
     
         $("#tasks-container").append(newContainer);
     });

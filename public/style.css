@@ -1,0 +1,8 @@
+* {
+    margin: 1px;
+}
+
+.task-card {
+    background-color: aquamarine;
+    width: 15%;
+}
