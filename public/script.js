@@ -16,7 +16,7 @@ function renderTasks(taskArray) {
         const taskName = $("<h2>").text(element);
         newContainer.append(taskName);
 
-        const time = $("<h2>").text("00:00:00");
+        const time = $("<h2>").text("00:00:00").attr("class", "saved-time").attr("id", element);
         newContainer.append(time);
 
         const saveButton = $("<button>").attr("class", "save-button button");
@@ -89,3 +89,13 @@ $("#timer-reset").on("click", function(){
     sec = 0;
     min = 0;
 })
+
+// Save button
+
+$(document).on('click', '.save-button', function(e) {
+  e.preventDefault();
+
+  const id = $(this).parent().find(".saved-time").attr("id")
+
+  document.querySelector("#" + id).innerHTML = timer.innerHTML;
+});
