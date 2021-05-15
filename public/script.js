@@ -4,27 +4,23 @@ $("#submit-button").on("click", function(){
     let newTask = $("#task").val();
     taskArray.push(newTask);
     console.log(taskArray)
-    renderTasks(taskArray);
+    renderTask(newTask)
 })
 
-function renderTasks(taskArray) {
-    $("#tasks-container").empty();
+function renderTask(newTask) {
+  const newContainer = $("<div>").attr("class", "task-card");
+  
+  const taskName = $("<h2>").text(newTask);
+  newContainer.append(taskName);
 
-    taskArray.forEach(element => {
-        const newContainer = $("<div>").attr("class", "task-card");
-    
-        const taskName = $("<h2>").text(element);
-        newContainer.append(taskName);
+  const time = $("<h2>").text("00:00:00").attr("class", "saved-time").attr("id", newTask);
+  newContainer.append(time);
 
-        const time = $("<h2>").text("00:00:00").attr("class", "saved-time").attr("id", element);
-        newContainer.append(time);
-
-        const saveButton = $("<button>").attr("class", "save-button button");
-        saveButton.text("Save");
-        newContainer.append(saveButton);
-    
-        $("#tasks-container").append(newContainer);
-    });
+  const saveButton = $("<button>").attr("class", "save-button button");
+  saveButton.text("Save");
+  newContainer.append(saveButton);
+  
+  $("#tasks-container").append(newContainer);
 }
 
 // Timer
@@ -105,8 +101,6 @@ $(document).on('click', '.save-button', function(e) {
   const currentMin = parseInt(currentTimerArr[1]);
   const currentHr = parseInt(currentTimerArr[0]);
 
-  // console.log(currentTimerArr)
-
   const newTimerArr = timer.innerHTML.split(":");
 
   const newSec = parseInt(newTimerArr[2]);
@@ -138,15 +132,6 @@ $(document).on('click', '.save-button', function(e) {
   }
 
   const finalTime = finalHr + ":" + finalMin + ":" + finalSec;
-
-  // console.log(newTimerArr)
-
-  // console.log(currentSec)
-  // console.log(currentMin)
-  // console.log(currentHr)
-  // console.log(newSec)
-  // console.log(newMin)
-  // console.log(newHr)
 
   console.log(finalTime)
 
