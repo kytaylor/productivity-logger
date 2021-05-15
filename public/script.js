@@ -95,7 +95,60 @@ $("#timer-reset").on("click", function(){
 $(document).on('click', '.save-button', function(e) {
   e.preventDefault();
 
-  const id = $(this).parent().find(".saved-time").attr("id")
+  const id = $(this).parent().find(".saved-time").attr("id");
 
-  document.querySelector("#" + id).innerHTML = timer.innerHTML;
+  let currentTimer = document.querySelector("#" + id).innerHTML;
+
+  const currentTimerArr = currentTimer.split(":");
+
+  const currentSec = parseInt(currentTimerArr[2]);
+  const currentMin = parseInt(currentTimerArr[1]);
+  const currentHr = parseInt(currentTimerArr[0]);
+
+  // console.log(currentTimerArr)
+
+  const newTimerArr = timer.innerHTML.split(":");
+
+  const newSec = parseInt(newTimerArr[2]);
+  const newMin = parseInt(newTimerArr[1]);
+  const newHr = parseInt(newTimerArr[0]);
+
+  let finalSec = currentSec + newSec;
+  let finalMin = currentMin + newMin;
+  let finalHr = currentHr + newHr;
+
+  if (finalSec >= 60) {
+    finalSec = finalSec - 60;
+    finalMin = finalMin + 1;
+  }
+
+  if (finalMin >= 60) {
+    finalMin = finalMin - 60;
+    finalHr = finalHr + 1;
+  }
+
+  if (finalSec < 10 || finalSec === 0) {
+    finalSec = "0" + finalSec;
+  }
+  if (finalMin < 10 || finalMin === 0) {
+    finalMin = "0" + finalMin;
+  }
+  if (finalHr < 10 || finalHr === 0) {
+    finalHr = "0" + finalHr;
+  }
+
+  const finalTime = finalHr + ":" + finalMin + ":" + finalSec;
+
+  // console.log(newTimerArr)
+
+  // console.log(currentSec)
+  // console.log(currentMin)
+  // console.log(currentHr)
+  // console.log(newSec)
+  // console.log(newMin)
+  // console.log(newHr)
+
+  console.log(finalTime)
+
+  document.querySelector("#" + id).innerHTML = finalTime;
 });
