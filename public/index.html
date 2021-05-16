@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela">
     <title>Productivity Logger</title>
 </head>
 <body>
-    <h1>Productivity Logger</h1>
+    <header>
+        <h1>Productivity Logger</h1>
+    </header>
 
     <div id="timer">
         <div id="timer-time">
@@ -22,8 +25,10 @@
         </div>
     </div>
 
-    <input type="text" id="task" name="task">
-    <button id="submit-button" class="button">Add Task</button>
+    <div id="input-container">
+        <input type="text" id="task" name="task"><br>
+        <button id="submit-button" class="button">Add Task</button>
+    </div>
 
     <div id="tasks-container"></div>
 
