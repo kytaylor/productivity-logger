@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    font-family: Varela;
+}
+
+body {
+    background-color: #55BCC9;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FC4445;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    padding: 7px;
+}

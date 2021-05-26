@@ -104,8 +104,9 @@ input {
 }
 
 .task-card {
-    background-color: #8860D0;
+    background-color: #287d88;
     color: white;
+    border: 5px solid white;
     width: 15%;
     border-radius: 25px;
     text-align: center;
