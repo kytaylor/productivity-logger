@@ -19,3 +19,32 @@ h1 {
     text-align: center;
     padding: 7px;
 }
+
+#week-days {
+    padding-top: 55.6px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    height: 100%;
+}
+
+.day-of-week {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 23px;
+    padding: 5px;
+}
+
+#calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 100%;
+}
+
+.day {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 100px;
+    padding: 5px;
+}
