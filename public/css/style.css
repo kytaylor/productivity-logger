@@ -1,33 +1,18 @@
-/* 
-Red
-#FC4445
-Aqua
-#3FEEE6
-Dark Aqua? Idk
-#55BCC9
-Grayish Blue
-#97CAEF
-Light Blue
-#CAFAFE 
-#8860D0
-rgba(131,58,180,1)
-*/
-
 * {
     margin: 0;
     font-family: Varela;
+    color: white;
 }
 
 body {
-    background-color: #55BCC9;
+    background-color: #2C3531;
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #FC4445;
-    color: white;
+    background-color: #d83b3b;
 }
 
 h1 {
@@ -35,8 +20,33 @@ h1 {
     padding: 7px;
 }
 
-#timer {
-    padding-top: 50px;
+#save-all {
+    border: 5px solid #d83b3b;
+    background-color: #d83b3b;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 48px;
+    border-radius: 25px;
+    width: 30%;
+    margin-top: 70px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#save-all:hover {
+    background-color: white;
+    color: #d83b3b;
+}
+
+#date {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 15px;
 }
 
 #timer-time {
@@ -44,16 +54,15 @@ h1 {
     font-size: 5rem;
 }
 
-#buttons-container {
+.buttons-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .button {
-    border: 5px solid #FC4445;
-    color: white;
-    background-color: #FC4445;
+    border: 5px solid #d83b3b;
+    background-color: #d83b3b;
     padding: 10px 27px;
     text-align: center;
     text-decoration: none;
@@ -71,7 +80,7 @@ h1 {
 
 .button:hover {
     background-color: white;
-    color: #FC4445;
+    color: #d83b3b;
 }
 
 .save-button {
@@ -90,7 +99,7 @@ input {
     height: 47px;
     width: 25%;
     padding-top: 1px;
-    box-shadow: 10px 10px #FC4445;
+    box-shadow: 10px 10px #d83b3b;
     margin-top: 20px;
     color: black;
     padding-left: 10px;
@@ -105,7 +114,6 @@ input {
 
 .task-card {
     background-color: #287d88;
-    color: white;
     border: 5px solid white;
     width: 15%;
     border-radius: 25px;
