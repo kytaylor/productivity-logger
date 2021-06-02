@@ -113,13 +113,14 @@ input {
 }
 
 .task-card {
-    background-color: #287d88;
+    background-color: #505855;
     border: 5px solid white;
     width: 15%;
     border-radius: 25px;
     text-align: center;
     padding: 10px;
     margin: 20px;
+    box-shadow: 10px 10px #d83b3b;
 }
 
 h2 {
