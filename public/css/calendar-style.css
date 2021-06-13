@@ -4,14 +4,14 @@
 }
 
 body {
-    background-color: #55BCC9;
+    background-color: #2C3531;
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #FC4445;
+    background-color: #d83b3b;
     color: white;
 }
 
@@ -29,8 +29,9 @@ h1 {
 }
 
 .day-of-week {
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    color: white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
     height: 23px;
     padding: 5px;
 }
@@ -43,8 +44,9 @@ h1 {
 }
 
 .day {
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    color: white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
     height: 100px;
     padding: 5px;
 }
