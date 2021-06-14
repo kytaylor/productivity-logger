@@ -20,8 +20,16 @@ h1 {
     padding: 7px;
 }
 
-#week-days {
+#month-year {
     padding-top: 55.6px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+#week-days {
+    /* padding-top: 55.6px; */
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 1fr;
