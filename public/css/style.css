@@ -13,11 +13,28 @@ header {
     top: 0;
     width: 100%;
     background-color: #d83b3b;
+    height: 55.6px;
 }
 
 h1 {
     text-align: center;
     padding: 7px;
+}
+
+h3 {
+    text-align: right;
+    position: relative;
+    right: 20px;
+    bottom: 40px;
+}
+
+a:link {
+    text-decoration: none;
+}
+  
+  
+  a:visited {
+    text-decoration: none;
 }
 
 #save-all {
