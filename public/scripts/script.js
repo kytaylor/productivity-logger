@@ -1,10 +1,10 @@
 // Code for finding current date
 let today = new Date();
-let dd = String(today.getDate()).padStart(2, '0');
-let mm = String(today.getMonth() + 1).padStart(2, '0');
+let dd = String(today.getDate()).padStart(2, "0");
+let mm = String(today.getMonth() + 1).padStart(2, "0");
 let yyyy = today.getFullYear();
 
-today = mm + '/' + dd + '/' + yyyy;
+today = mm + "/" + dd + "/" + yyyy;
 $("#date").append(today)
 
 let taskArray = [];
@@ -14,6 +14,7 @@ $("#submit-button").on("click", function(){
     taskArray.push(newTask);
     console.log(taskArray)
     renderTask(newTask)
+    document.getElementById("task").value = "";
 })
 
 function renderTask(newTask) {
@@ -97,7 +98,7 @@ $("#timer-reset").on("click", function(){
 
 // Save button
 
-$(document).on('click', '.save-button', function(e) {
+$(document).on("click", ".save-button", function(e) {
   e.preventDefault();
 
   const id = $(this).parent().find(".saved-time").attr("id");
@@ -146,3 +147,66 @@ $(document).on('click', '.save-button', function(e) {
 
   document.querySelector("#" + id).innerHTML = finalTime;
 });
+
+// Save all button
+$("#save-all").on("click", function(e){
+  e.preventDefault();
+  console.log("All tasks: " + taskArray);
+
+  for (let i = 0; i < taskArray.length; i++) {
+    const element = taskArray[i];
+    console.log(element)
+
+    const data = {
+      taskName: element,
+      time: document.querySelector("#" + element).innerHTML
+    }
+    console.log(data)
+
+    fetch("/api/tasks", {
+      method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+  }
+
+  // const data = {
+  //   username: usernameSignUp,
+  //   password: passwordSignUp
+  // }
+
+  // fetch("/api/tasks", {
+  //   method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(newReservation),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (data) {
+  //         // If a table is available... tell user they are booked.
+
+  //         alert('Yay! You are officially booked!');
+  //       } else {
+  //         // Otherwise, tell the  user they are on the wait list
+
+  //         alert('Sorry you are on the wait list');
+
+  //         // Clear the form
+  //         document.getElementById('reserve-name').value = '';
+  //         document.getElementById('reserve-phone').value = '';
+  //         document.getElementById('reserve-email').value = '';
+  //         document.getElementById('reserve-unique-id').value = '';
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error:', error);
+  //     });
+})
